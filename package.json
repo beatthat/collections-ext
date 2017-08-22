@@ -1,0 +1,28 @@
+{
+  "name": "unity-collection-extensions",
+  "version": "0.0.1",
+  "description": "handy c# extension functions for System.Collections classes",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatthat/unity-collection-extensions.git"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "src"
+  ],
+  "author": "larrykirschner@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beatthat/unity-collection-extensions/issues"
+  },
+  "homepage": "https://github.com/beatthat/unity-collection-extensions",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "dependencies": {
+    "ncp": "^2.0.0",
+    "mkdirp": "^0.5.1"
+  }
+}
