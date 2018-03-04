@@ -1,7 +1,7 @@
 {
   "name": "collections-ext",
   "scope": "ape",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "handy c# extension functions for System.Collections classes",
   "main": "index.js",
   "repository": {
