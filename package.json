@@ -1,6 +1,6 @@
 {
   "name": "collections-ext",
-  "scope": "ape",
+  "scope": "beatthat",
   "version": "1.0.0",
   "description": "handy c# extension functions for System.Collections classes",
   "main": "index.js",
@@ -11,7 +11,9 @@
   "files": [
     "index.js",
     "scripts",
-    "src"
+    "src",
+    "Runtime",
+    "Samples"
   ],
   "author": "larrykirschner@gmail.com",
   "license": "MIT",
