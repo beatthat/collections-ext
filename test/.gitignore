@@ -28,3 +28,4 @@ unpm-packages.json
 
 ProjectSettings/*
 !ProjectSettings/ProjectSettings.asset
+!ProjectSettings/ProjectVersion.txt

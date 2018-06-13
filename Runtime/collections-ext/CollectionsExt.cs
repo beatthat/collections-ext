@@ -1,9 +1,11 @@
+using BeatThat.GetComponentsExt;
+using BeatThat.CollectionsExt;
 using System.Collections.Generic;
 
 
-namespace BeatThat
+namespace BeatThat.CollectionsExt
 {
-	public static class CollectionExtensions
+    public static class Ext
 	{
 		/// <summary>
 		/// Enable <c>ICollection.AddRange<T></c> which is normally only available on <c>IList<T></c>
@@ -34,3 +36,6 @@ namespace BeatThat
 		}
 	}
 }
+
+
+
