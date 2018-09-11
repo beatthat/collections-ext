@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace BeatThat.CollectionsExt
 {
+    public delegate ToType MapFunc<FromType, ToType>(FromType from);
     public static class Ext
 	{
 		/// <summary>
@@ -32,6 +33,20 @@ namespace BeatThat.CollectionsExt
 			c.Add (elem);
 			return true;
 		}
+
+        public static ToType[] Map<FromType,ToType>(this FromType[] a, MapFunc<FromType, ToType> mapFunc)
+        {
+            if(a == null) {
+                return null;
+            }
+
+            var result = new ToType[a.Length];
+            for (var i = 0; i < a.Length; i++) {
+                result[i] = mapFunc(a[i]);
+            }
+
+            return result;
+        }
 	}
 }
 
