@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 
@@ -46,6 +47,34 @@ namespace BeatThat.CollectionsExt
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// No-allocation method to pull a 'best' item from a collection,
+        /// e.g. min or max by item value).
+        /// 
+        /// returns the item that would be first 
+        /// if you sorted the given collection by the passed-in comparer.
+        /// The result will be empty only if the passed in collection is empty
+        /// </summary>
+        public static bool FirstBy<T>(this IEnumerable<T> c, out T result, Comparison<T> comp)
+        {
+            result = default(T);
+
+            var anySet = false;
+            foreach(var x in c) {
+                if(!anySet) {
+                    result = x;
+                    anySet = true;
+                    continue;
+                }
+
+                if(comp(x, result) < 0) {
+                    result = x;
+                }
+            }
+
+            return anySet;
         }
 	}
 }
