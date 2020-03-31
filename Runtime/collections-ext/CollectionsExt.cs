@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace BeatThat.CollectionsExt
 {
@@ -40,12 +40,29 @@ namespace BeatThat.CollectionsExt
             if(a == null) {
                 return null;
             }
-
             var result = new ToType[a.Length];
             for (var i = 0; i < a.Length; i++) {
                 result[i] = mapFunc(a[i]);
             }
+            return result;
+        }
 
+        public static ToType[] MapToArray<FromType, ToType>(
+            this IEnumerable<FromType> a,
+            MapFunc<FromType, ToType> mapFunc)
+        {
+            if (a == null)
+            {
+                return null;
+            }
+            var c = a as ICollection<FromType>;
+            var result = new ToType[c != null ? c.Count : a.Count()];
+            var i = 0;
+            foreach(var x in a)
+            {
+                result[i] = mapFunc(x);
+                i++;
+            }
             return result;
         }
 
