@@ -1,7 +1,7 @@
 {
   "name": "collections-ext",
   "scope": "beatthat",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "handy c# extension functions for System.Collections classes",
   "main": "index.js",
   "repository": {
