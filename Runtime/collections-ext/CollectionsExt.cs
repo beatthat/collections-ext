@@ -7,6 +7,16 @@ namespace BeatThat.CollectionsExt
     public delegate ToType MapFunc<FromType, ToType>(FromType from);
     public static class Ext
 	{
+        public static void AddMapped<FromType, ToType>(
+            this ICollection<ToType> toC, 
+            ICollection<FromType> fromC,
+            MapFunc<FromType,ToType> m)
+		{
+			foreach(var o in fromC) {
+				toC.Add(m(o));
+			}
+		}
+
 		/// <summary>
 		/// Enable <c>ICollection.AddRange<T></c> which is normally only available on <c>IList<T></c>
 		/// </summary>
@@ -45,6 +55,11 @@ namespace BeatThat.CollectionsExt
                 result[i] = mapFunc(a[i]);
             }
             return result;
+        }
+
+        public static T[] ToArray<T>(this IEnumerable<T> a)
+        {
+            return MapToArray(a, x => x);
         }
 
         public static ToType[] MapToArray<FromType, ToType>(
