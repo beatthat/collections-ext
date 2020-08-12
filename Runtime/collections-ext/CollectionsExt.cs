@@ -57,11 +57,6 @@ namespace BeatThat.CollectionsExt
             return result;
         }
 
-        public static T[] ToArray<T>(this IEnumerable<T> a)
-        {
-            return MapToArray(a, x => x);
-        }
-
         public static ToType[] MapToArray<FromType, ToType>(
             this IEnumerable<FromType> a,
             MapFunc<FromType, ToType> mapFunc)
