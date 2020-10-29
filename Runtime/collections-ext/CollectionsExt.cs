@@ -45,6 +45,16 @@ namespace BeatThat.CollectionsExt
 			return true;
 		}
 
+        public static T FindOne<T>(this IEnumerable<T> items, Predicate<T> match)
+        {
+            foreach(var i in items) {
+                if(match(i)) {
+                    return i;
+                }
+            }
+            return default(T);
+        }
+
         public static ToType[] Map<FromType,ToType>(this FromType[] a, MapFunc<FromType, ToType> mapFunc)
         {
             if(a == null) {
